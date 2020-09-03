@@ -13,7 +13,8 @@ a {
 }
 
 /* Float */
-.clear-fix:before,.clear-fix:after{
+.clear-fix:before,
+.clear-fix:after {
   content: '';
   display: block;
   clear: both;
@@ -51,8 +52,7 @@ a {
   position: relative;
 }
 
-.section .inner,
-header .inner {
+.section .inner {
   max-width: 980px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -64,7 +64,7 @@ header .inner {
   height: 34px;
   background: #eee linear-gradient(to bottom, #fcfcfc, #eee);
   border: 1px solid #d5d5d5;
-  display: inline-flex;
+  display: flex;
   position: relative;
   border-radius: 4px;
   align-items: center;
@@ -137,6 +137,7 @@ header {
   background: #fff;
 
 }
+
 /* haeder의 배치 display:flex아닌 float사용하여 배치 */
 header .inner {
   height: 78px;
@@ -188,8 +189,8 @@ header .sign-group {
 }
 
 header .btn-group {
-  order: 1;
   display: flex;
+  order: 1;
 }
 
 header .btn-group .sign-in {
@@ -353,6 +354,7 @@ header .sub-menu li a:hover {
 .section--feature .tiles .inner {
   max-width: 1200px;
 }
+
 /* gird 대신 flaot과 width을 사용하여 배치함 */
 .section--feature .tiles ul {
   /* display: grid;
@@ -414,8 +416,8 @@ header .sub-menu li a:hover {
 }
 
 /* Pricing Card */
-.section--pricing{
-  background: linear-gradient(#f5f5f5,#fff);
+.section--pricing {
+  background: linear-gradient(#f5f5f5, #fff);
 }
 
 .section--pricing .inner {
@@ -452,42 +454,150 @@ header .sub-menu li a:hover {
   flex: 1 0;
   border-left: 1px solid #e5e5e5;
 }
+
 /* FOOTER */
-footer{
 
-}
-footer .inner{
-padding: 50px 0 ;
-border-top: 1px solid #eee ;
+footer .inner {
+  padding: 50px 0;
+  border-top: 1px solid #eee;
 
 
 }
-footer .site-links{
- display: flex;
+
+footer .site-links {
+  display: flex;
 }
 
-footer .site-links li{
-font-size: 12px;
-margin-right: 10px;
-color:#767676;
+footer .site-links li {
+  font-size: 12px;
+  margin-right: 10px;
+  color: #767676;
 }
-footer .site-links li a{
-  color:#4078c0;
+
+footer .site-links li a {
+  color: #4078c0;
 }
-footer .site-links li a:hover{
+
+footer .site-links li a:hover {
   text-decoration: underline;
 }
+
 /* logo을 중앙에 배치 */
-footer .logo{
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-margin: auto;
-width: 24px;
-height: 24px;
+footer .logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 24px;
+  height: 24px;
 }
-footer .logo:hover svg{
+
+footer .logo:hover svg {
   fill: #4078c0;
+}
+
+#toggle-btn {
+  display: none;
+  background-image: url('../img/toggle-btn.svg');
+  width: 18px;
+  height: 24px;
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  cursor: pointer;
+  text-indent: -9999px;
+}
+
+/*Media query */
+/* 1024px 768px */
+@media (max-width:1024px) {
+
+  /* 우선 순위의 문제 x태그 선택자 1점 클래스 선택자 10점*/
+  header.section .inner {
+    max-width: none;
+    height: auto;
+    padding: 0 20px;
+  }
+
+  header .menu-group,
+  header .sign-group {
+    float: none;
+  }
+
+  header .menu-group {
+    display: block;
+  }
+
+  header .logo {
+    padding: 12px;
+  }
+
+  header .main-menu {
+    display: block;
+    margin-bottom: 10px;
+
+
+  }
+
+  header .main-menu li {
+    border-top: 1px solid #e5e5e5;
+  }
+
+  header .main-menu li a {
+    padding: 16px 0;
+
+  }
+
+  header .sign-group {
+    display: block;
+    padding: 10px 0 20px;
+
+  }
+
+  header .btn-group {
+    display: block;
+  }
+
+  header .btn-group .btn {
+    justify-content: center;
+  }
+
+  header .btn-group .sign-in {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+
+  #search-form {
+    margin-top: 12px;
+    margin-right: 0;
+  }
+
+  #search {
+    width: 100%;
+    height: 42px;
+    text-align: center;
+  }
+
+  header .sign-group .sub-menu {
+    margin-right: 0;
+    margin-top: 12px;
+    justify-content: center;
+  }
+
+  header .toggle {
+    display: none;
+  }
+
+  header .toggle.on {
+    display: block;
+
+  }
+
+  #toggle-btn {
+    display: block;
+
+  }
+
 }
