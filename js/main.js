@@ -4,6 +4,8 @@
   const $toggleBtn =document.getElementById('toggle-btn');
   const $signIn = document.querySelector('.sign-in')
   const $signUp = document.querySelector('.sign-up');
+  const $mainMenu = document.querySelector('.main-menu');
+  const $signGrup = document.querySelector('.sign-group');
 
 
   $toggleBtn.addEventListener('click',()=>{
@@ -20,6 +22,7 @@
       offElement();
     }
   });
+  
   function toggleElement(){
     [].forEach.call($toggles,(toggle)=>{
       toggle.classList.toggle('on');
@@ -30,4 +33,5 @@
       toggle.classList.remove('on');
     });
   }
+  
 })(window,document);

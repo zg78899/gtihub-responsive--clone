@@ -135,7 +135,7 @@ header {
   border-bottom: 1px solid rgba(0, 0, 0, .75);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
   background: #fff;
-
+  transition: all 0.7s ease-in-out;
 }
 
 /* haeder의 배치 display:flex아닌 float사용하여 배치 */
@@ -143,13 +143,14 @@ header .inner {
   height: 78px;
   /* display: flex; */
   /* justify-content: space-between; */
+  
 }
 
 header .menu-group {
   display: flex;
   height: 100%;
   align-items: center;
-
+  
 }
 
 header .logo {
@@ -170,12 +171,14 @@ header .logo a:hover {
 
 header .main-menu {
   display: flex;
+  
 }
 
 header .main-menu li a {
   display: block;
   padding: 10px;
   color: #3c4146;
+  
 }
 
 header .main-menu li a:hover {
@@ -236,7 +239,7 @@ header .sub-menu li a:hover {
   /* backrgound 전체를 아우르는 방법 */
   background-size: cover;
 }
-
+/* 배경의 색 어둡게 */
 .section-visual::before {
   background: rgba(0, 0, 0, .3);
   content: "";
@@ -250,8 +253,8 @@ header .sub-menu li a:hover {
 }
 
 .section-visual .inner {
-  padding: 160px 0;
   display: flex;
+  padding: 160px 0;
 }
 
 .section-visual .summary {
@@ -274,10 +277,8 @@ header .sub-menu li a:hover {
 }
 
 #sign-form {
-  /* background: yellow; */
   margin-top: 16px;
   width: 340px;
-
 }
 
 #sign-form .input--text {
@@ -361,14 +362,13 @@ header .sub-menu li a:hover {
   grid-template-columns: repeat(4, 1fr); 구형 브라우저 gird사용 불가함 */
 
 }
-
+/* LI */
 .section--feature .tiles li {
   padding: 34px 24px;
   text-align: center;
   line-height: 1.5;
   border-right: 1px solid #e5e5e5;
   box-sizing: border-box;
-
   /*  dissplay gird을 사용하지 않을때 float과 width을 %로 지정함 그리고 box-sizing: border-box가 필요;*/
   float: left;
   width: 25%;
@@ -398,8 +398,6 @@ header .sub-menu li a:hover {
 }
 
 /* WHERE IS */
-
-
 .section--whereis .inner {
   padding-top: 80px;
 }
@@ -408,7 +406,7 @@ header .sub-menu li a:hover {
   width: 100%;
   height: 400px;
   margin-top: 40px;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-bottom: none;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -429,8 +427,6 @@ header .sub-menu li a:hover {
   border: 1px solid #e5e5e5;
   border-radius: 6px;
   box-sizing: border-box;
-
-
 }
 
 .section--pricing .card .cell {
@@ -508,96 +504,4 @@ footer .logo:hover svg {
   right: 20px;
   cursor: pointer;
   text-indent: -9999px;
-}
-
-/*Media query */
-/* 1024px 768px */
-@media (max-width:1024px) {
-
-  /* 우선 순위의 문제 x태그 선택자 1점 클래스 선택자 10점*/
-  header.section .inner {
-    max-width: none;
-    height: auto;
-    padding: 0 20px;
-  }
-
-  header .menu-group,
-  header .sign-group {
-    float: none;
-  }
-
-  header .menu-group {
-    display: block;
-  }
-
-  header .logo {
-    padding: 12px;
-  }
-
-  header .main-menu {
-    display: block;
-    margin-bottom: 10px;
-
-
-  }
-
-  header .main-menu li {
-    border-top: 1px solid #e5e5e5;
-  }
-
-  header .main-menu li a {
-    padding: 16px 0;
-
-  }
-
-  header .sign-group {
-    display: block;
-    padding: 10px 0 20px;
-
-  }
-
-  header .btn-group {
-    display: block;
-  }
-
-  header .btn-group .btn {
-    justify-content: center;
-  }
-
-  header .btn-group .sign-in {
-    margin-right: 0;
-    margin-bottom: 12px;
-  }
-
-  #search-form {
-    margin-top: 12px;
-    margin-right: 0;
-  }
-
-  #search {
-    width: 100%;
-    height: 42px;
-    text-align: center;
-  }
-
-  header .sign-group .sub-menu {
-    margin-right: 0;
-    margin-top: 12px;
-    justify-content: center;
-  }
-
-  header .toggle {
-    display: none;
-  }
-
-  header .toggle.on {
-    display: block;
-
-  }
-
-  #toggle-btn {
-    display: block;
-
-  }
-
 }
