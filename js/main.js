@@ -18,16 +18,28 @@
   offElement();
   });
   window.addEventListener('resize',()=>{
-    if(window,innerWidth >1024){
+    if(window.innerWidth >1024){
       offElement();
     }
   });
-  
+
+ window.addEventListener('click',({target})=>{
+   console.log($mainMenu.lastChild)
+   console.log(target.parentNode.parentNode);
+   if(target === $toggleBtn)return;
+   if(target.parentNode.parentNode.classList.contains('on') ||
+   target.parentNode.classList.contains('on')){
+     return;
+   }
+   offElement();
+ });
+
   function toggleElement(){
     [].forEach.call($toggles,(toggle)=>{
       toggle.classList.toggle('on');
     });
   }
+   
   function offElement(){
     [].forEach.call($toggles,(toggle)=>{
       toggle.classList.remove('on');
