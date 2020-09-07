@@ -4,9 +4,6 @@
   const $toggleBtn =document.getElementById('toggle-btn');
   const $signIn = document.querySelector('.sign-in')
   const $signUp = document.querySelector('.sign-up');
-  const $mainMenu = document.querySelector('.main-menu');
-  const $signGrup = document.querySelector('.sign-group');
-
 
   $toggleBtn.addEventListener('click',()=>{
   toggleElement();
@@ -24,8 +21,6 @@
   });
 
  window.addEventListener('click',({target})=>{
-   console.log($mainMenu.lastChild)
-   console.log(target.parentNode.parentNode);
    if(target === $toggleBtn)return;
    if(target.parentNode.parentNode.classList.contains('on') ||
    target.parentNode.classList.contains('on')){
